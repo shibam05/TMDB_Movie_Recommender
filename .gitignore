@@ -1,0 +1,4 @@
+config.py
+*.pkl
+.venv/
+__pycache__/
