@@ -1,7 +1,13 @@
 import streamlit as st
 import pickle
 import requests
-from config import TMDB_API_KEY
+import os
+
+if "TMDB_API_KEY" in st.secrets:
+    TMDB_API_KEY = st.secrets["TMDB_API_KEY"]
+else:
+    # Fallback to local environment variable
+    TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 
 def fetch_poster(movie_id):
